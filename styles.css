@@ -1,0 +1,80 @@
+/*!
+  Name: Weather
+  Description: This is the stylesheet for the zM Weather WordPress plugin.
+*/
+.sidebar-container .zm-weather-container {
+    float: left;
+    }
+
+.sidebar-container .zm-weather-container .temperature {
+    font-size: 31px;
+    font-weight: 300;
+    position: relative;
+    top: 6px;
+    right: -6px;
+    }
+
+.sidebar-container .zm-weather-container img {
+    width: 32px;
+    height: auto;
+    }
+
+.sidebar-container .zm-weather-container .item {
+    width: auto;
+    text-align: left;
+    }
+
+.sidebar-container .zm-weather-container .left {
+    margin: 0 5px 5px 0;
+    }
+
+.sidebar-container .zm-weather-container .right {
+    width: 86px;
+    }
+
+.sidebar-container .zm-weather-container .item .meta {
+    display: block;
+    }
+
+.sidebar-wide-container .zm-weather-container .item {
+    margin: 0 19px 0 0;
+    width: 45px;
+    }
+
+.sidebar-wide-container .zm-weather-container .item-last {
+    margin: 0;
+    }
+
+.sidebar-wide-container .sidebar-container .zm-weather-container .item {
+    width: 125px;
+    }
+
+.zm-weather-container .item {
+    float: left;
+    width: 60px;
+    letter-spacing: 0.09em;
+    text-align: center;
+    }
+
+.zm-weather-container .item .icon img,
+.zm-weather-container .item-last .icon img {
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #AAA;
+    }
+
+.sidebar-wide-container .zm-weather-container .item {
+    margin: 0 19px 0 0;
+    width: 45px;
+    }
+
+.sidebar-container .zm-weather-container .item .day-of-week {
+    display: none;
+    }
+
+.sidebar-wide-container .zm-weather-container .temperature,
+.sidebar-wide-container .zm-weather-container .item .weather-high .text,
+.sidebar-wide-container .zm-weather-container .item .weather-low .text,
+.sidebar-wide-container .zm-weather-container .item .weather-wind .text {
+    display: none;
+    }
