@@ -65,8 +65,8 @@ jQuery(document ).ready(function( $ ){
         local = _zm_weather_default_location;
     }
 
-console.log( _zm_weather_default_location );
-console.log( local );
-    // get_weather( local, "#zm_weather_target" );
+// console.log( _zm_weather_default_location );
+// console.log( local );
+    // get_weather( local, "#zm_weather_local_target" );
     get_weather( local, "#zm_weather_forecast_target" );
 });
