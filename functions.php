@@ -22,7 +22,6 @@ add_action( 'wp_enqueue_scripts', 'zm_weather_styles' );
 
 function zm_weather_local_target(){
     if ( get_option( 'zm_geo_location_version' ) ) : ?>
-    <h2 class="zm-base-title"><?php _e( 'Local Weather', 'zm_wearther' ); ?></h2>
     <div id="zm_weather_local_target"><div class="zm-loading">Loading weather...</div></div>​
     <?php else : ?>
         <div style="color: #b94a48;background-color: #f2dede;border-radius: 2px; padding: 4px; border: 1px solid #eed3d7;">

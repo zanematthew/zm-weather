@@ -2,26 +2,14 @@
   Name: Weather
   Description: This is the stylesheet for the zM Weather WordPress plugin.
 */
-.sidebar-container .zm-weather-container {
-    float: left;
-    }
-
 .sidebar-container .zm-weather-container .temperature {
-    font-size: 31px;
+    font-size: 19px;
     font-weight: 300;
-    position: relative;
-    top: 6px;
-    right: -6px;
     }
 
 .sidebar-container .zm-weather-container img {
     width: 32px;
     height: auto;
-    }
-
-.sidebar-container .zm-weather-container .item {
-    width: auto;
-    text-align: left;
     }
 
 .sidebar-container .zm-weather-container .left {
@@ -33,7 +21,16 @@
     }
 
 .sidebar-container .zm-weather-container .item .meta {
-    display: block;
+    }
+
+.sidebar-container .zm-weather-container {
+    float: left;
+    margin: 0 10px 0 0;
+    }
+
+.sidebar-container .zm-weather-container .icon {
+    float: left;
+    margin: 0 5px 0 0;
     }
 
 .sidebar-wide-container .zm-weather-container .item {
@@ -45,15 +42,12 @@
     margin: 0;
     }
 
-.sidebar-wide-container .sidebar-container .zm-weather-container .item {
-    width: 125px;
+.zm-weather-container .item {
+    float: left;
     }
 
 .zm-weather-container .item {
-    float: left;
-    width: 60px;
     letter-spacing: 0.09em;
-    text-align: center;
     }
 
 .zm-weather-container .item .icon img,
@@ -61,6 +55,7 @@
     background: #fff;
     border-radius: 3px;
     box-shadow: 1px 1px 1px #AAA;
+    width: 32px;
     }
 
 .sidebar-wide-container .zm-weather-container .item {
@@ -77,4 +72,19 @@
 .sidebar-wide-container .zm-weather-container .item .weather-low .text,
 .sidebar-wide-container .zm-weather-container .item .weather-wind .text {
     display: none;
+    }
+
+
+.single .main-container .zm-weather-container .item {
+    margin: 0 0 10px;
+    }
+
+.single .main-container .zm-weather-container .item:last-child {
+    margin: 0;
+    }
+
+.single .main-container .zm-weather-container .item-last .icon,
+.single .main-container .zm-weather-container .item .icon {
+    float: left;
+    margin: 0 10px 0 0;
     }

@@ -1,15 +1,10 @@
 jQuery(document ).ready(function( $ ){
     function get_weather( loc, target ) {
 
-        if ( jQuery( target ).attr('data-location') != "undefined" ){
-            loc = jQuery( target ).attr('data-location');
-        }
-
         var u = 'f';
 
         // using bylocation table
         var query = "SELECT * FROM weather.bylocation WHERE location='"+loc+"'";
-
         var query = encodeURIComponent( query );
         var env = encodeURIComponent('store://datatables.org/alltableswithkeys');
         var format = 'json';
@@ -18,32 +13,32 @@ jQuery(document ).ready(function( $ ){
 
         var url = 'http://query.yahooapis.com/v1/public/yql?q=' + query + '&env=' + env + '&format=' + format + '&callback=' + callback + '&_nocache=' + cacheBuster;
 
-        window.weatherCallback = function(data) {
+        weatherCallback = function(data) {
             var selector = '';
-
             if ( data.query.results == null ){
                 html = '<div>Unable to determine<br /> weather conditions.</div>';
             } else {
 
                 var info = data.query.results.weather.rss.channel;
                 var html = '';
+                var css_class;
 
                 html =  '<div class="zm-weather-container">';
                 for ( var i in info.item.forecast ) {
-                    html += '<div class="item '+i+'">';
-                        html += '<div class="left">';
-                            html += '<span class="meta day-of-week">'+info.item.forecast[i].day+'</span>';
-                            html += '<div class="icon">';
+                    html += '<div class="item ' + i + '">';
+                        html += '<div class="icon">';
                                 html += '<img src="http://l.yimg.com/a/i/us/we/52/' + info.item.forecast[i].code + '.gif" />';
-                            html += '</div>';
                         html += '</div>';
-                        html += '<div class="right">';
-                            html += '<span class="temperature">'+info.item.condition.temp+'&deg;</span>';
+                        html += '<div class="meta-container">';
+                            html += '<span class="meta day-of-week">'+info.item.forecast[i].day+' </span>';
+                            html += '<span class="meta temperature">'+info.item.condition.temp+'&deg; </span>';
+                            html += '<span class="meta weather-high-low">';
+                                html += info.item.forecast[i].high+'&deg;';
+                                html += '\/';
+                                html += info.item.forecast[i].low+'&deg;';
+                            html += '</span>';
+                            html += '<span class="meta weather-wind"> '+info.wind.speed + info.units.speed+'</span>';
                         html += '</div>';
-                        html += '<div class="clear"></div>';
-                        html += '<span class="meta weather-high"><span class="text">High</span>'+info.item.forecast[i].high+'&deg;</span>';
-                        html += '<span class="meta weather-low"><span class="text">Low</span> '+info.item.forecast[i].low+'&deg;</span>';
-                        html += '<span class="meta weather-wind"><span class="text">Wind</span> '+info.wind.speed + info.units.speed+'</span>';
                     html += '</div>';
                 }
                 html += '</div>';
@@ -59,14 +54,7 @@ jQuery(document ).ready(function( $ ){
         });
     }
 
-    if ( typeof( _user ) !== 'undefined' ){
-        local = _user.city +','+_user.region;
-    } else {
-        local = _zm_weather_default_location;
-    }
+    get_weather( _user.location.zip, "#zm_weather_local_target" );
 
-// console.log( _zm_weather_default_location );
-// console.log( local );
-    // get_weather( local, "#zm_weather_local_target" );
-    get_weather( local, "#zm_weather_forecast_target" );
+    get_weather( $('.zip').text(), "#zm_weather_forecast_target" );
 });
