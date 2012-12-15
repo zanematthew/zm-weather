@@ -5,12 +5,6 @@ function zm_weather_head(){
 }
 add_action('wp_head', 'zm_weather_head' );
 
-function zm_weather_admin_init(){
-    global $_zm_setting_fields;
-    $_zm_setting_fields[] = 'zm_weather_default_location';
-}
-add_action('admin_init','zm_weather_admin_init');
-
 function zm_weather_styles() {
 
     $dependencies[] = 'jquery';
@@ -44,4 +38,4 @@ function zm_weather_settings(){?>
         </div>
     </fieldset>
 <?php }
-add_action( 'zm_weather_settings', 'zm_weather_settings' );
+add_action( 'zm_ev_after_settings', 'zm_weather_settings' );
