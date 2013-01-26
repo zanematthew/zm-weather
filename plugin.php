@@ -6,7 +6,7 @@
  * Version: 1.0.0
  * Author: Zane M. Kolnik, Pete S. Milkman
  * Author URI: http://zanematthew.com/
- * License: GP
+ * License: GPL
  */
 
 define( 'ZM_WEATHER_VERSION', '1' );
